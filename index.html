@@ -116,6 +116,22 @@
               position: sticky;
               top: 50px;
             }
+            h3 {
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 2rem;
+              text-align: left;
+              text-decoration: none;
+              color: white;
+              text-shadow: 5px 5px 10px #888888;
+              position: sticky;
+              top: 150px;
+              padding-left: 3.25rem;
+              margin-top: -4.75rem;
+            }
+            h3 a {
+              text-decoration: none;
+              color: white;
+            }
             @media screen and (min-width: 800px) {
               h1 {
                  font-size: 6rem;
@@ -168,10 +184,10 @@
             /*navigation bar*/
             .topnav {
             background-color: white;
-            overflow: hidden;
+            /*overflow: hidden;*/
             position: fixed;
-            top: 0;
-            left: 0;
+            /*top: 0;
+            left: 0;*/
             width: 100%;
             font-family: Arial, Helvetica, sans-serif;
             z-index: 1;
@@ -179,10 +195,14 @@
             .topnav a {
             float: right;
             color: black;
-            text-align: center;
+            /*text-align: center;*/
             padding: 0.875rem 1rem;
             text-decoration: none;
-            font-size: 0.875rem;
+            /*font-size: 0.875rem;*/
+            }
+            .topnav h4 {
+              float: left;
+              padding-left: 0.875rem;
             }
             .topnav img {
             float: left;
@@ -208,6 +228,7 @@
     <!--NAVIGATION BAR-->
     <nav id="navbar">   
     <div class="topnav">
+        <!--<h4>Rock of the Earth</h4>-->
         <!--<img src="/Users/Mitch/the_odin_project/learning_projects/portfolio/images/ML-LOGO.png">-->
         <a href="#navbar">Home</a>
         <a href="#contact">Contact</a>
@@ -220,7 +241,8 @@
     <div class="container">
     <!--WELCOME SECTION-->
     <div class="column centered welcome-section" id="welcome-section">
-        <h1>Mitch Levy <i></i></h1>
+        <h1>Mitch Levy</h1>
+        <h3><i><a href="mailto:mitch@rockoftheearth.com">mitch@rockoftheearth.com</a></i></h3>
     </div>
     </div>
     <!--<div class="container-3">-->
@@ -275,7 +297,7 @@
                 <a id="profile-link2" href="https://github.com/hurryupmitch" target="_blank">Github</a>
             </div>
             <div class="column">
-                <a id="profile-link3" href="">Email</a>
+                <a id="profile-link3" href="mailto:mitch@rockoftheearth.com">Email</a>
             </div>
         </div>
         <input type="button" value="Click Me"  onclick="play()"><audio id="audio" src="http://thealexfield.com/mitch/johncena.mp3"></audio>
