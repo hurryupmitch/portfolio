@@ -1,314 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!--<link rel="stylesheet" href="file:///Users/Mitch/the_odin_project/learning_projects/portfolio/styles.css">-->
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&amp;display=swap" rel="stylesheet" />
-        <title>My Portfolio Website</title>
-        <style>
-            /*CONTAINERS AND FLEX OBJECTS*/
-            .container {
-            max-width: 75rem;
-            margin: 0 auto;
-            padding-top: 6.25rem;
-            /*border: 1px solid black;*/
-            }
-            .container-2 {
-            max-width: 800px;
-            margin: 0 auto;
-            padding-top: 6.25rem;
-            text-align: center;
-            /*border: 1px solid black;*/
-            }
-            .container-3 {
-            min-width: 100%;
-            margin: 0 auto;
-            padding-top: 6.25rem;
-            background-color: white;
-            background-size: 100% 100%;
-            background-position: fixed;
-            /*border: 1px solid red;*/
-            }
-            .row {
-            display: flex;
-            flex-direction: row;
-            flex-wrap:nowrap;
-            padding: 0.625rem;
-            /*border: 1px solid black;*/
-            }
-            
-            .column {
-            flex-basis: 100%;
-            justify-content: space-around;
-            padding: 0.625rem;
-            /*border: 1px solid black;*/
-            }
-            @media screen and (max-width: 44em) {
-            .column {
-              flex: 1;
-              justify-content: space-around;
-            }
-            }
-            @media screen and (max-width: 44em) {
-              .container {
-                  flex: 1;
-                  justify-content: space-around;
-              }
-            }
-            @media screen and (max-width: 40em) {
-              .row {
-                  flex: 1;
-                  justify-content: space-around;
-                  flex-wrap: wrap;
-              }
-            }
-            @media screen and (max-width: 800px) {
-            ._25 {
-              flex: 2.5;
-            }
-            ._55 {
-              flex: 5.5;
-            }
-            ._20 {
-              flex: 2;
-            }
-            }
-            .row:after {
-              content: "";
-              display: table;
-              clear: both;
-            }
-            /*text and body ojects*/
-            html {
-            height: 100vh;
-            background-image: url(http://www.rockoftheearth.com/images/copenhagen.jpg), linear-gradient(white, black);
-            background-repeat: no-repeat;
-            background-size: auto;
-            background-attachment: fixed;
-            }
-            @media screen and (min-width: 800px) {
-              html {
-                height: 100vh;
-                background-image: url(http://www.rockoftheearth.com/images/copenhagen.jpg);
-                background-repeat: no-repeat;
-                background-size: auto;
-                background-attachment: fixed;
-              }
-            }
-            .text-center {
-              text-align: center;
-            }
-            body {
-              font-family: 'Cardo', serif;
-              color: black;
-              margin: 0;
-              padding: 0;
-            }
-            h1, h2, h3, h4, h5, h6 {
-              font-family: Arial, Helvetica, sans-serif;
-            }
-            h1 {
-              font-size: 6rem;
-              text-align: left;
-              color: white;
-              text-shadow: 5px 5px 10px #888888;
-              position: -webkit-sticky; /* Safari */
-              position: sticky;
-              top: 50px;
-            }
-            h3 {
-              font-family: Arial, Helvetica, sans-serif;
-              font-size: 2rem;
-              text-align: left;
-              text-decoration: none;
-              color: white;
-              text-shadow: 5px 5px 10px #888888;
-              position: sticky;
-              top: 150px;
-              padding-left: 3.25rem;
-              margin-top: -4.75rem;
-            }
-            h3 a {
-              text-decoration: none;
-              color: white;
-            }
-            @media screen and (min-width: 800px) {
-              h1 {
-                 font-size: 6rem;
-                 padding-left: 3rem;
-              }
-            }
-            p {
-              font-family: 'Josefin Sans', sans-serif;
-              color: black;
-              font-size: 1.125rem;
-            }
-            .centered {
-              text-align: center;
-            }
-            .box {
-            width: 18.75rem;
-            height: 12.5rem;
-            /*border: 1px solid black;*/
-            padding: 3.125rem;
-            margin: 1.25rem;
-            }
-            .welcome-section {
-            height: 61rem;
-            max-width: 100%;
-            /*border: 0.5px solid black;*/
-            }
-
-            .box img:hover {
-            box-shadow: 5px 5px 10px #888888;
-            }
-            .projects {
-            text-align: center;
-            margin: 0 auto;
-            background-color: white;
-            background-size: 100% 100%;
-            background-attachment: fixed;
-            }
-            .project-tile img:hover {
-            box-shadow: 5px 5px 10px #888888;
-            }
-            .mids p{
-                font-size: 8px;
-            }
-            .mids a{
-            color: black;
-            text-decoration: none;
-            font-size: 18px;
-            font-family:Arial, Helvetica, sans-serif;
-            }
-            /*navigation bar*/
-            .topnav {
-            background-color: white;
-            /*overflow: hidden;*/
-            position: fixed;
-            /*top: 0;
-            left: 0;*/
-            width: 100%;
-            font-family: Arial, Helvetica, sans-serif;
-            z-index: 1;
-            }
-            .topnav a {
-            float: right;
-            color: black;
-            /*text-align: center;*/
-            padding: 0.875rem 1rem;
-            text-decoration: none;
-            /*font-size: 0.875rem;*/
-            }
-            .topnav h4 {
-              float: left;
-              padding-left: 0.875rem;
-            }
-            .topnav img {
-            float: left;
-            padding-left: 5px;
-            }
-            .topnav a:hover {
-            background-color: #e7e7e7;
-            color: black;
-            }
-            .topnav a.active {
-            background-color: #e7e7e7;
-            color: black;
-            }
-            @media all and (max-width: 400px) {
-            .topnav {
-                flex-basis: 100%;
-                flex-wrap: wrap;
-            }
-            }
-            </style>
-    </head>
-   <header>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>My Portfolio Website</title>
+  </head>
+  <header>
     <!--NAVIGATION BAR-->
-    <nav id="navbar">   
-    <div class="topnav">
+    <nav id="navbar">
+      <div class="topnav">
         <!--<h4>Rock of the Earth</h4>-->
         <!--<img src="/Users/Mitch/the_odin_project/learning_projects/portfolio/images/ML-LOGO.png">-->
         <a href="#navbar">Home</a>
         <a href="#contact">Contact</a>
         <a href="#projects">Projects</a>
         <a href="#aboutme">About Me</a>
-    </div> 
-    </nav>   
-    </header>    
-    <body>    
+      </div>
+    </nav>
+  </header>
+  <body>
     <div class="container">
-    <!--WELCOME SECTION-->
-    <div class="column centered welcome-section" id="welcome-section">
+      <!--WELCOME SECTION-->
+      <div class="column centered welcome-section" id="welcome-section">
         <h1>Mitch Levy</h1>
-        <h3><i><a href="mailto:mitch@rockoftheearth.com">mitch@rockoftheearth.com</a></i></h3>
+        <h3>
+          <i
+            ><a href="mailto:mitch@rockoftheearth.com"
+              >mitch@rockoftheearth.com</a
+            ></i
+          >
+        </h3>
+      </div>
     </div>
-    </div>
-    <!--<div class="container-3">-->
-    <div class="container container-3">  
-    <div class="container-2">
-    <h2 id="aboutme">About Me</h2>
-    <p>I'm Mitch. I'm based in Los Angeles, California. I'm learning to design the front and back end of webpages. I work full time as a health and fitness coach and hope to bring the same type of personality and helpful patience to a new web development career. </p>
-    </div>
-    <br>
-    <br>
-    <hr>
-    <br>
-    <br>
-    <!--PROJECTS SECTION-->
-    <div id="projects">
-    <h2 id="projects" class="projects">HTML/CSS Projects</h2>
-    <div class="row project-tile">
-        <div class="column centered">
-            <a href="http://www.rockoftheearth.com/johncena"><img src="http://www.rockoftheearth.com/images/cenapageimage.png" alt="john cena page screenshot"></a>
+    <div class="container container-3">
+      <div class="container-2">
+        <h2 id="aboutme">About Me</h2>
+        <p>
+          I'm Mitch. I'm based in Los Angeles, California. I'm learning to
+          design the front and back end of webpages. I work full time as a
+          health and fitness coach and hope to bring the same type of
+          personality and helpful patience to a new web development career.
+        </p>
+      </div>
+      <br />
+      <br />
+      <hr />
+      <br />
+      <br />
+      <!--PROJECTS SECTION-->
+      <div id="projects">
+        <h2 id="projects" class="projects">HTML/CSS Projects</h2>
+        <div class="row project-tile">
+          <div class="column centered">
+            <a href="http://www.rockoftheearth.com/johncena"
+              ><img
+                src="http://www.rockoftheearth.com/images/cenapageimage.png"
+                alt="john cena page screenshot"
+            /></a>
             <p>Tribute Webpage for actor and legend John Cena</p>
-        </div>       
-        <div class="column centered">
-            <a href="http://www.rockoftheearth.com/google"><img src="http://www.rockoftheearth.com/images/googlepageimage.png" alt="google page screenshot"></a>
+          </div>
+          <div class="column centered">
+            <a href="http://www.rockoftheearth.com/google"
+              ><img
+                src="http://www.rockoftheearth.com/images/googlepageimage.png"
+                alt="google page screenshot"
+            /></a>
             <p>Nonfuctional Recreation of the Google Homepage</p>
-        </div> 
-        <div class="column centered">
-            <a href="http://www.rockoftheearth.com/survey"><img src="http://www.rockoftheearth.com/images/surveypageimage.png" alt="survey page screenshot"></a>
+          </div>
+          <div class="column centered">
+            <a href="http://www.rockoftheearth.com/survey"
+              ><img
+                src="http://www.rockoftheearth.com/images/surveypageimage.png"
+                alt="survey page screenshot"
+            /></a>
             <p>Survey Page</p>
-        </div>     
-    </div>
+          </div>
+        </div>
+        <div class="row project-tile">
+          <div class="column centered">
+            <a href="http://www.rockoftheearth.com/ubik"
+              ><img
+                src="http://www.rockoftheearth.com/images/ubikpageimage.png"
+                alt="ubik page screenshot"
+            /></a>
+            <p>Product Landing and Shopping Page</p>
+          </div>
+          <div class="column centered">
+            <a href="http://www.rockoftheearth.com/jscalchowto"
+              ><img
+                src="http://www.rockoftheearth.com/images/techpageimage.png"
+                alt="technical page screenshot"
+            /></a>
+            <p>Technical Documentation How-To Page</p>
+          </div>
+          <div class="column centered">
+            <a href="http://www.rockoftheearth.com/"
+              ><img
+                src="http://www.rockoftheearth.com/images/portfoliopageimage.png"
+                alt="portfolio page screenshot"
+            /></a>
+            <p>My Portfolio Home Page</p>
+          </div>
+        </div>
+    <!--<section class="jsProjects">
+    <h2 id="projects" class="projects">JavaScript Projects</h2>
     <div class="row project-tile">
         <div class="column centered">
-            <a href="http://www.rockoftheearth.com/ubik"><img src="http://www.rockoftheearth.com/images/ubikpageimage.png" alt="ubik page screenshot"></a>
-            <p>Product Landing and Shopping Page</p>
+            <a href=""><img src="" alt="rock paper scissors page screenshot"></a>
+            <p>Rock Paper Scissors JavaScript Game</p>
         </div>       
         <div class="column centered">
-            <a href="http://www.rockoftheearth.com/jscalchowto"><img src="http://www.rockoftheearth.com/images/techpageimage.png" alt="technical page screenshot"></a>
-            <p>Technical Documentation How-To Page</p>
-        </div> 
-        <div class="column centered">
-            <a href="http://www.rockoftheearth.com/"><img src="http://www.rockoftheearth.com/images/portfoliopageimage.png" alt="portfolio page screenshot"></a>
-            <p>My Portfolio Home Page</p>
-        </div>     
+          <a href=""><img src="" alt=""></a>
+          <p>Placeholder for JS Project</p>
+      </div> 
+      <div class="column centered">
+        <a href=""><img src="" alt=""></a>
+        <p>Placeholder for JS Project</p>
+    </div>      
     </div>
-    </div>
-    <div class="mids container-2" id="contact">
+    <div class="row project-tile">
+      <div class="column centered">
+          <a href=""><img src="" alt=""></a>
+          <p>Placeholder for JS Project</p>
+      </div>       
+      <div class="column centered">
+        <a href=""><img src="" alt=""></a>
+        <p>Placeholder for JS Project</p>
+    </div> 
+    <div class="column centered">
+      <a href=""><img src="" alt=""></a>
+      <p>Placeholder for JS Project</p>
+  </div>      
+  </div>
+  </section>-->
+      </div>
+      <div class="mids container-2" id="contact">
         <div class="row">
-            <div class="column">
-                <a id="profile-link" href="https://www.freecodecamp.org/mitchlevy" target="_blank">FCC Profile</a>
-            </div>
-            <div class="column">
-                <a id="profile-link2" href="https://github.com/hurryupmitch" target="_blank">Github</a>
-            </div>
-            <div class="column">
-                <a id="profile-link3" href="mailto:mitch@rockoftheearth.com">Email</a>
-            </div>
+          <div class="column">
+            <a
+              id="profile-link"
+              href="https://www.freecodecamp.org/mitchlevy"
+              target="_blank"
+              >FCC Profile</a
+            >
+          </div>
+          <div class="column">
+            <a
+              id="profile-link2"
+              href="https://github.com/hurryupmitch"
+              target="_blank"
+              >Github</a
+            >
+          </div>
+          <div class="column">
+            <a id="profile-link3" href="mailto:mitch@rockoftheearth.com"
+              >Email</a
+            >
+          </div>
         </div>
-        <input type="button" value="Click Me"  onclick="play()"><audio id="audio" src="http://thealexfield.com/mitch/johncena.mp3"></audio>
+        <input type="button" value="Click Me" onclick="play()" /><audio
+          id="audio"
+          src="http://thealexfield.com/mitch/johncena.mp3"
+        ></audio>
+      </div>
     </div>
-    </div>
-    <!--</div>-->
-    <script>
-        function play(){
-       var audio = document.getElementById("audio");
-       audio.play();
-                 }
-    </script>
-    </body>
-    </html>
+    <script src="./script.js"></script>
+  </body>
+</html>
