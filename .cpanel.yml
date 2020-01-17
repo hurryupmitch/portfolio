@@ -4,3 +4,4 @@ deployment:
  - export DEPLOYPATH=/home/bet39bnbm53e/public_html/
  - /bin/cp index.html $DEPLOYPATH
  - /bin/cp style.css $DEPLOYPATH
+ - /bin/cp script.js $DEPLOYPATH
